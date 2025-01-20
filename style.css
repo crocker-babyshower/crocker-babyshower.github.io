@@ -1,3 +1,50 @@
-h1 {
-    color: blue;
+* {box-sizing:border-box}
+
+body {
+    margin: 0;
+    max-width: 768px; 
+    overflow-x: hidden; 
+    margin: 0 auto; /* Center the content */
+
+}
+
+/******* HOME ******/
+.home {
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bear_img {
+    width: 103%;
+    position: absolute;
+    transform: translate(-24%, 28%);
+    rotate: 38deg;
+    overflow: hidden;
+}
+
+.text {
+    position: relative;
+}
+
+/******* BOY ******/
+.boy {
+    width: 100%;
+    height: 100vh; 
+}
+
+
+/******* RSVP ******/
+.rsvp {
+    width: 100%;
+    height: 100vh; 
+}
+
+
+/******* COUNTDOWN ******/
+.countdown {
+    width: 100%;
+    height: 100vh; 
 }
