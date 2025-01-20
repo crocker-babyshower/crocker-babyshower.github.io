@@ -8,6 +8,47 @@ body {
 
 }
 
+/******* FONTS ******/
+.playfair_caps {
+    font-family: "Playfair Display SC", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.playfair_normal {
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+.quicksand {
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.lavishly {
+    font-family: "Lavishly Yours", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.dancing {
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.jost {
+    font-family: "Jost", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 /******* HOME ******/
 .home {
     width: 100%;
@@ -15,36 +56,259 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
 }
 
-.bear_img {
+.home_bear_img {
     width: 103%;
     position: absolute;
-    transform: translate(-24%, 28%);
-    rotate: 38deg;
+    transform: translate(-42%, 3%);
+    rotate: 35deg;
     overflow: hidden;
 }
 
-.text {
+.home_text {
     position: relative;
+    align-self: start;
 }
 
+.home_line1 {
+    font-size: 3rem;
+    margin-top: 20%;
+    text-align: center;
+}
+
+.home_line2 {
+    font-size: 8rem;
+    transform: translate(0%, -16%);
+    margin-bottom: -27%;
+}
+
+/* .bear {
+    transform: translate(0%, 10%);
+} */
+
+.home_wait {
+    transform: translate(0%, -70%);
+    text-align: right;
+}
+
+.home_details {
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+.home_melissatony {
+    font-size: 4rem;
+    margin-bottom: 10%;
+}
+
+.home_crocker {
+    font-size: 4rem;
+    transform: translate(83%, -82%);
+    position: absolute;
+}
 /******* BOY ******/
 .boy {
     width: 100%;
     height: 100vh; 
+    text-align: center;
+    overflow-x: hidden;
 }
 
+.boy_img {
+    width: 100%;
+}
+
+.boy_title {
+    margin-top: 10%;
+}
+
+.boy_we {
+    font-size: 2.5rem;
+}
+
+.boy_aboy {
+    font-size: 5rem;
+    transform: translate(-8%, -54%);
+}
+
+.boy_details {
+    margin: -10% 10% 10% 10%;
+}
 
 /******* RSVP ******/
 .rsvp {
     width: 100%;
     height: 100vh; 
+    position: relative;
+    text-align: center;
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    flex-direction: column;
+    overflow: hidden;
 }
 
+  
+  .rsvp_title {
+      font-size: 4rem; 
+      color: black;
+      opacity: 0.7;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.212);
+      position: relative;
+  }
+  
+  
+  /***** RSVP FORM PORTRAIT ****/
+  #RSVP_form {
+      /* height: 130vh;  */
+      width: 100%; 
+      text-align: left;
+      display: flex; 
+      flex-direction: column; 
+      align-items: left;
+      padding-bottom: 20px; 
+      box-sizing: border-box; 
+      position: relative; 
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 2s ease-out, transform 2s ease-out; /* Ensures smooth fade */
+  }
+  
+  .form {
+    text-transform: uppercase;
+      width: 75%;
+      text-align: left;
+      color: slategray;
+      margin: 40px;
+  }
+  
+  .button {
+      background-color: slategray;
+      color: white;
+      border: none;
+      margin-bottom: 20%;
+  }
+  
+  .button:hover {
+      background-color: rgb(4, 133, 4);
+  }
+  
+  /****** SUCCESS SCREEN MODAL ON FORM SUBMIT *****/
+  #modalTitle {
+      font-size: 2rem; 
+      text-transform: uppercase;
+  }
+  #modalMessage {
+      text-align: center;
+  }
 
-/******* COUNTDOWN ******/
-.countdown {
+
+  /****** REGISTRY *****/
+.registry {
     width: 100%;
     height: 100vh; 
+    position: relative;
+    overflow: hidden;
+}
+
+.registry_title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.registry_text {
+    position: relative;
+    text-align: center;
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    flex-direction: column;
+}
+
+/******* COUNTDOWN ******/
+#countdown {
+    height: 100vh; 
+    width: 100%; 
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    padding-bottom: 20px; 
+    box-sizing: border-box; 
+    position: relative; 
+    overflow: hidden;
+
+    /* transform: translateY(20px); */
+}
+
+.clock_all {
+  position: relative;
+  z-index: 10;
+}
+
+.countdown_cursive {
+  font-size: 3rem;
+  transform: translate(15%, 86%);
+  color: #edb8c2;
+  position: absolute;
+  font-weight: lighter;
+  margin-top: -50px; 
+  text-align: center;
+  z-index: 10;
+}
+
+.countdown_description {
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+  z-index: 10;
+  font-family: "Quicksand", serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-top: 70%;
+}
+
+#clockdiv>div {
+    padding: 10px;
+    border-radius: 3px;
+    display: inline-block;
+    background-color: #ffe6ec;
+}
+
+#clockdiv div>span {
+    font-size: 2.5rem;
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color:gray;
+    font-display: swap;
+}
+
+/* Style for visible text */
+.smalltext {
+    font-family: "Playfair Display SC", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap; 
+}
+
+.countdown_title {
+    font-size: 3rem;
+    align-self: center;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 10%;
+}
+
+.countdown_img {
+  margin-top: 100px;
+  width: 250px;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
 }
