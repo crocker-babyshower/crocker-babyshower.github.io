@@ -65,11 +65,26 @@ body {
     transform: translate(-42%, 3%);
     rotate: 35deg;
     overflow: hidden;
+    z-index: 1;
+}
+
+.home_drawnheart {
+    width: 30%;
+    position: absolute;
+    transform: translate(103%, -49%);
+    z-index: 1;
+    rotate: 22deg;
+    overflow: hidden;
+}
+
+.home_and {
+    font-size: 0.8rem;
 }
 
 .home_text {
     position: relative;
     align-self: start;
+    z-index: 10;
 }
 
 .home_line1 {
