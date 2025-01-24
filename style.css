@@ -203,7 +203,7 @@ body {
 /******* BOY ******/
 .boy {
     width: 100%;
-    height: 100vh; 
+    min-height: 100vh; 
     text-align: center;
     overflow-x: hidden;
     /* background-color: #d3c7b99c; */
@@ -376,6 +376,14 @@ body {
     margin-bottom: 20%;
 }
 
+.registry_bcg_img {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 50%;
+    opacity: 0.4;
+}
+
 /******* COUNTDOWN ******/
 #countdown {
     height: 100vh; 
@@ -459,6 +467,7 @@ body {
     position: relative;
     z-index: 10;
     margin-bottom: 10%;
+    margin-top: 10%;
 }
 
 .countdown_img {
