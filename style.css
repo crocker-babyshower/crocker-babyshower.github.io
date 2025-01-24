@@ -80,20 +80,19 @@ body {
 
 .home_flowers_top {
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     width: 100%;
-    transform: translate(-79%, -35%) rotate(89deg);
+    top: 0;
     opacity: 0.5;
-    clip-path: inset(0 0 0 0); /* Adjust to fit the container */
 }
 
 .home_flowers_bottom {
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     overflow-x: hidden;
     width: 100%;
-    transform: scaleY(-1);
-    bottom: 0;
+    transform: scaleY(-1) translate(0%, -192%);
+    /* bottom: 0; */
     opacity: 0.5;
 }
 
@@ -235,7 +234,7 @@ body {
     z-index: -1;
     opacity: 0.5;
     left: 0;
-    transform: translate(10%, 36%);
+    /* transform: translate(10%, 36%); */
     rotate: -19deg;
 }
 
@@ -331,14 +330,23 @@ body {
   /****** REGISTRY *****/
 .registry {
     width: 100%;
-    height: 100vh; 
+    /* height: 100vh;  */
     position: relative;
     overflow: hidden;
 }
 
 .registry_title {
+    margin-top:10%;
     font-size: 3rem;
     text-align: center;
+    margin-bottom: 10%;
+}
+
+.thankyou {
+    position: absolute;
+    font-size: 3rem;
+    transform: translate(156%, -126%);
+    color: #4a80948e;
 }
 
 .registry_text {
@@ -348,6 +356,15 @@ body {
     justify-content: center; /* Horizontally center the content */
     align-items: center; /* Vertically center the content */
     flex-direction: column;
+}
+
+.registry_description {
+    margin: 10%;
+}
+
+.babylist_img {
+    width: 70%;
+    margin-bottom: 20%;
 }
 
 /******* COUNTDOWN ******/
@@ -380,15 +397,14 @@ body {
 }
 
 .countdown_cursive {
-  font-size: 3rem;
-  color: #4a80948e;
-  position: absolute;
-  font-weight: lighter;
-  margin-top: -50px; 
-  text-align: center;
-  z-index: 10;
-  bottom: 43%;
-  right: 8%;
+    font-size: 3rem;
+    color: #4a80948e;
+    position: absolute;
+    font-weight: lighter;
+    margin-top: -50px;
+    text-align: center;
+    z-index: 10;
+    transform: translate(32%, 657%);
 }
 
 .countdown_description {
