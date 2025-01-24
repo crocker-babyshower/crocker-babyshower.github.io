@@ -19,7 +19,7 @@
             <img class="home_bear_img" src="./bear_main.png">
             <img class="home_drawnheart" src="./drawn_heart.png">
             <img class="home_flowers_top" src="./mimi_flowers1.png">
-            <img class="home_flowers_bottom" src="./mimi_flowers1.png">
+            <img class="home_flowers_bottom" src="./mimi_flowers2.png">
             <div class="home_text">
                 <div class="playfair_caps home_line1">We Can</div>
                 <div class="lavishly home_line2">
@@ -40,6 +40,31 @@
             </div>
         </div>
 
+        <!-- SLIDESHOW -->
+          <!-- Slideshow container -->
+        <!-- <div class="slideshow_container"> -->
+            <!-- <div class="overlay">
+              
+                <div class="aloha">ALO
+                    <span class="newline">HA</span>
+                </div>
+                <div class="baby">
+                    a little Sprinkle
+                    <span class="newline">of Love</span>
+                </div>
+            </div> -->
+            <!-- Full-width images with number and caption text -->
+            <!-- <div class="mySlides fade">
+            <img class="img_carousel" src="./web_sand_resize.png">
+            </div>
+        
+            <div class="mySlides fade">
+            <img class="img_carousel" src="./web_sand1_resize.png">
+            </div>
+   
+        </div> -->
+            
+
         <!-- WE'RE HAVING A BOY -->
         <div class="boy">
             <img class="boy_img" src="./web_boy_img.png">
@@ -47,13 +72,17 @@
                 <div class="playfair_caps boy_we">We&apos;re having</div>
                 <div class="lavishly boy_aboy">a boy</div>
             </div>
+            <img class="boy_bcg_img" src="./web_hotairballoon.png">
             <div class="quicksand boy_details">
                 We&apos;re thrilled to share the exciting news—it&apos;s a boy! Our little bundle of joy is expected to arrive this May, and we can&apos;t wait to meet him. Thank you for celebrating this special moment with us!
             </div>
         </div>
 
         <!-- RSVP -->
+        
         <div class="rsvp">
+            <img class="boy_img" src="./web_sand1_resize.png">
+            <img class="rsvp_bcg_img" src="./mimi_flowers1.png">
             <div class="rsvp_title playfair_caps">rsvp</div>
             <div class="text-center mt-4 mb-4 quicksand">Fill out the form below to confirm your attendance. We hope to see you there!</div>
             <div class="form jost" style="align-self:center;">
@@ -91,6 +120,7 @@
                     <button type="submit" class="button w-100 p-2">CONFIRM YOUR RSVP</button>
                 </form>
             </div>
+            <!-- <img class="rsvp_bottom_img" src="./mimi_flowers2.png">  -->
         </div>
 
         <!-- MODAL ON SUCCESS -->
@@ -115,6 +145,7 @@
 
         <!-- REGISTRY -->
         <div class="registry">
+            <img class="boy_img" src="./web_ultrasound.png">
             <div class="registry_title playfair_caps">Regsitry</div>
             <div class="registry_text">
                 TEXT
@@ -124,6 +155,7 @@
         <!-- COUNTDOWN -->
         <div class="countdown">
             <div id="countdown">
+                <img class="boy_img" src="./web_couple.png">
                 <h1 class="countdown_title playfair_caps">Countdown</h1>
                 <div class="countdown_cursive lavishly">to baby shower</div>
                 <div class="d-flex justify-content-center align-items-center clock_all">
@@ -147,6 +179,7 @@
                         </div>
                     </div>
                 </div>
+                <img class="countdown_bcg" src="./web_balloons.png">
                 <div class="countdown_description">Contact Elaine at 360-850-3085 or ealasagas@gmail.com for any questions!</div>
                 <!-- <img class="bottom" src="./palm_corner_countdown.png"> -->
             </div>
@@ -199,6 +232,37 @@
                 // Display the modal
                 $('#responseModal').modal('show');
             });
+        </script>
+
+         <!-- LOGIC FOR SLIDESHOW-->
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Increment slide index
+            slideIndex++;
+
+            // Reset to first slide if index exceeds total slides
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            // Display the current slide
+            slides[slideIndex - 1].style.display = "block";
+
+            // Set timer to call this function again
+            setTimeout(showSlides, 5000); // Change slide every 5 seconds
+            }
         </script>
 
         <!-- LOGIC FOR COUNTDOWN TIMER -->
