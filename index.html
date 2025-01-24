@@ -18,7 +18,7 @@
         <div class="home">
             <img class="home_bear_img" src="./bear_main.png">
             <img class="home_drawnheart" src="./drawn_heart.png">
-            <img class="home_flowers_top" src="./mimi_flowers1.png">
+            <!-- <img class="home_flowers_top" src="./mimi_flowers1.png"> -->
             <img class="home_flowers_bottom" src="./mimi_flowers2.png">
             <div class="home_text">
                 <div class="playfair_caps home_line1">We Can</div>
@@ -39,32 +39,7 @@
                 
             </div>
         </div>
-
-        <!-- SLIDESHOW -->
-          <!-- Slideshow container -->
-        <!-- <div class="slideshow_container"> -->
-            <!-- <div class="overlay">
-              
-                <div class="aloha">ALO
-                    <span class="newline">HA</span>
-                </div>
-                <div class="baby">
-                    a little Sprinkle
-                    <span class="newline">of Love</span>
-                </div>
-            </div> -->
-            <!-- Full-width images with number and caption text -->
-            <!-- <div class="mySlides fade">
-            <img class="img_carousel" src="./web_sand_resize.png">
-            </div>
-        
-            <div class="mySlides fade">
-            <img class="img_carousel" src="./web_sand1_resize.png">
-            </div>
-   
-        </div> -->
             
-
         <!-- WE'RE HAVING A BOY -->
         <div class="boy">
             <img class="boy_img" src="./web_boy_img.png">
@@ -232,37 +207,6 @@
                 // Display the modal
                 $('#responseModal').modal('show');
             });
-        </script>
-
-         <!-- LOGIC FOR SLIDESHOW-->
-        <script>
-            let slideIndex = 0;
-            showSlides();
-
-            function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-
-            // Hide all slides
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            // Increment slide index
-            slideIndex++;
-
-            // Reset to first slide if index exceeds total slides
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-
-            // Display the current slide
-            slides[slideIndex - 1].style.display = "block";
-
-            // Set timer to call this function again
-            setTimeout(showSlides, 5000); // Change slide every 5 seconds
-            }
         </script>
 
         <!-- LOGIC FOR COUNTDOWN TIMER -->
