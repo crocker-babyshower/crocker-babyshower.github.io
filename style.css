@@ -53,7 +53,7 @@ body {
 /******* HOME ******/
 .home {
     width: 100%;
-    height: 100vh; 
+    /* height: 100vh;  */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -210,23 +210,6 @@ body {
 /* .boy_img {
     width: 100%;
 } */
-
-.image-container {
-    position: relative;
-    display: inline-block;
-}
-
-.image-container::after {
-    content: '';
-    position: absolute;
-    bottom: 0; /* Attach the gradient to the bottom */
-    left: 0;
-    width: 100%;
-    height: 50%; /* Adjust this value to control how much of the image gets covered */
-    background: linear-gradient(to top, white, rgba(255, 255, 255, 0)); /* White gradient fading to transparent */
-    pointer-events: none; /* Ensure it doesn't interfere with clicking the image */
-    z-index: 2; /* Keep the gradient above the image */
-}
 
 .boy_img {
     display: block; /* Ensures no extra space around the image */
