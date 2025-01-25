@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    /* max-width: 768px;  */
+    max-width: 768px; 
     overflow-x: hidden  !important;
     margin: 0 auto; /* Center the content */
 
