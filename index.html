@@ -21,7 +21,7 @@
            <meta property="og:url" content="https://crocker-babyshower.github.io/" />
            <meta property="og:type" content="website" />
     </head>
-    <body>        
+    <body>
         <!-- HOME -->
         <div class="home">
             <img class="home_bear_img" src="./bear_main.png">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="home_details">
                     <div class="playfair_caps">Join us for <br/>a baby shower with</div>
-                    <div class="dancing home_melissatony">Melissa <span class="home_and">and</span>Tony</div>
+                    <div class="dancing home_melissatony">Melisa <span class="home_and">and</span>Tony</div>
                     <div class="dancing home_crocker">Crocker</div>
                     <br/>
                     <div class="playfair_caps">March 29th, 2025
@@ -58,13 +58,43 @@
             </div>
             <!-- <img class="boy_bcg_img" src="./web_hotairballoon.png"> -->
             <div class="quicksand boy_details">
-                We&apos;re thrilled to share the exciting news—it&apos;s a boy! Our little bundle of joy is expected to arrive this May, and we can&apos;t wait to meet him. Thank you for celebrating this special moment with us!
+                We&apos;re thrilled to share the exciting news—it&apos;s a boy! Our little bundle of joy, Noah Anthony Crocker, is expected to arrive this May, and we can&apos;t wait to meet him. Thank you for celebrating this special moment with us!
             </div>
             <img src="./web_babybear.png" width="28%" style="margin-bottom: 10%">
         </div>
 
+
+        <!-- NOAH -->
+        <div class="noah">
+            <img class="noah_img" src="./boy_photo.png">
+            <div class="noah_anthony lavishly">anthony</div>
+            <div class="noah_crocker playfair_caps">Crocker</div>
+
+            <div class="date-container">
+                <div class="top-line">
+                <span class="line"></span>
+                <span class="playfair_caps center-text">March</span>
+                <span class="line"></span>
+                </div>
+                <div class="playfair_caps main-text" style="font-size: 1.3rem">Saturday | <span class="fifteenth"> 29th</span> | at 2:00 PM</div>
+                <div class="bottom-line">
+                <span class="line"></span>
+                <span class="playfair_caps center-text">2025</span>
+                <span class="line"></span>
+                </div>
+            </div>
+
+            <div class="noah_party_description quicksand">
+                There will be food, fun and games! bring diapers of any size 
+                to enter the diaper raffle! We can&apos;t wait for you to celebrate
+                with us!
+
+            </div>
+            <img class="noah_flowers_bottom" src="./mimi_flowers_top_corner.png">
+
+        </div>
+
         <!-- RSVP -->
-        
         <div class="rsvp">
             <img class="boy_img" src="./web_sand1_resize_txt.png" alt="RSVP Image">
             <img class="rsvp_bcg_img" src="./mimi_flowers1.png">
@@ -131,7 +161,7 @@
         <div class="registry">
             <img class="boy_img" src="./web_ultrasound.png">
             <img class="registry_bcg_img" src="./web_hotairballoon.png">
-            <div class="registry_title playfair_caps">Regsitry</div>
+            <div class="registry_title playfair_caps">Registry</div>
             <div class="lavishly thankyou">thank you</div>
             <div class="registry_text">
             <div class="quicksand registry_description">Thank you so much for
@@ -152,9 +182,8 @@
         <!-- COUNTDOWN -->
         <div class="countdown">
             <div id="countdown">
-                <img class="boy_img" src="./web_couple.png">
-                <h1 class="countdown_title playfair_caps">Countdown</h1>
-                <div class="countdown_cursive lavishly">to baby shower</div>
+                <img class="countdown_boy_img" src="./preggo_shoot5.JPG">
+                <img class="countdown_title" src="./countdown_text.png">
                 <div class="d-flex justify-content-center align-items-center clock_all">
                     <div id="clockdiv">
                         <div>
@@ -181,6 +210,9 @@
                 <!-- <img class="bottom" src="./palm_corner_countdown.png"> -->
             </div>
         </div>
+        <!-- <div class="mimi">
+            <img class="mimi_photo" src="./preggo_shoot10.JPG">
+        </div> -->
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -230,7 +262,35 @@
                 $('#responseModal').modal('show');
             });
         </script>
+        <script>
+            let slideIndex = 0;
+            showSlides();
 
+            function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Increment slide index
+            slideIndex++;
+
+            // Reset to first slide if index exceeds total slides
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            // Display the current slide
+            slides[slideIndex - 1].style.display = "block";
+
+            // Set timer to call this function again
+            setTimeout(showSlides, 5000); // Change slide every 5 seconds
+            }
+        </script>
         <!-- LOGIC FOR COUNTDOWN TIMER -->
         <script>
             // Getting formated date from date string

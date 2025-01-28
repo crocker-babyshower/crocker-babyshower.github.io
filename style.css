@@ -138,25 +138,37 @@ body {
 .home_melissatony {
     font-size: 4rem;
     margin-bottom: 10%;
+    color: tan;
 }
 
 .home_crocker {
     font-size: 4rem;
     transform: translate(83%, -82%);
     position: absolute;
+    color: tan;
 }
 
 /******* SLIDESHOW ******/
 /* Slideshow container */
 .slideshow_container {
-    /* height: 100vh; */
     /* max-width: 1000px; */
     position: relative;
     margin: auto;
     overflow: hidden;
   }
+  
+.slideshow_container::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 60%; /* Adjust the height of the gradient */
+    background: linear-gradient(to top, white, transparent);
+    pointer-events: none; /* Ensures it doesn't block clicks or interactions */
+}
 
-  /* Hide the images by default */
+/* Hide the images by default */
 .mySlides {
     display: none;
     width: 100%;
@@ -165,7 +177,6 @@ body {
     margin: 0;
     overflow: hidden; /* Ensures no overflow from the image */
   }
-
 
 
 /* Overlay for text */
@@ -179,7 +190,14 @@ body {
     z-index: 2;
   }
 
-  .fade {
+.newline {
+    display: block; /* Forces a line break */
+    margin-top: 10px; /* Optional: Add additional space above the new line */
+}
+
+
+/* Fading animation */
+.fade {
     animation-name: fade;
     animation-duration: 5s; /* Adjust the duration as needed */
     animation-timing-function: ease-in-out; /* Smooth transition */
@@ -214,8 +232,18 @@ body {
 } */
 
 .boy_img {
-    display: block; /* Ensures no extra space around the image */
     width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    display: block; /* Ensures no extra space around the image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.boy_img1 {
+    width: 160%;
+    height: 100%;
+    object-fit: contain; 
+    display: block; /* Ensures no extra space around the image */
     height: auto; /* Maintain aspect ratio */
 }
 
@@ -246,6 +274,79 @@ body {
     /* transform: translate(10%, 36%); */
     rotate: -19deg;
 }
+
+/******* NOAH ******/
+.noah {
+    width: 100%;
+    min-height: 100vh; 
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+    /* background-color: #d3c7b99c; */
+}
+
+.noah_img {
+    width: 100%;
+}
+
+.noah_anthony {
+    color: #4a80948e;
+    font-size: 5rem;
+    margin-top: -93px;
+}
+
+.noah_crocker {
+    font-size: 5rem;
+    margin-top: -64px;
+    color: #4a80948e;
+}
+
+.noah_party_description {
+    text-align: right;
+    margin: 10%;
+}
+.noah_flowers_bottom {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    transform: scaleX(-1) scaleY(-1);
+}
+
+.date-container {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+  }
+  
+  .top-line,
+  .bottom-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  
+  .line {
+    flex: 1;
+    height: 1px;
+    background-color: tan;
+  }
+  
+  .center-text {
+    margin: 0 10px; /* Space around the centered text */
+    font-size: 1.2rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: tan;
+}
+  
+  .main-text {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: tan;
+  }
 
 /******* RSVP ******/
 .rsvp {
@@ -386,18 +487,25 @@ body {
 
 /******* COUNTDOWN ******/
 #countdown {
-    min-height: 100vh; 
+    /* min-height: 100vh;  */
     width: 100%; 
     text-align: center;
     display: flex; 
     flex-direction: column; 
     align-items: center;
     padding-bottom: 20px; 
-    box-sizing: border-box; 
+    /* box-sizing: border-box;  */
     position: relative; 
     overflow: hidden;
 
     /* transform: translateY(20px); */
+}
+
+
+.countdown_boy_img {
+    display: block; /* Ensures no extra space around the image */
+    width: 160%;
+    height: auto; /* Maintain aspect ratio */
 }
 
 .countdown_bcg {
@@ -413,15 +521,22 @@ body {
   z-index: 10;
 }
 
-.countdown_cursive {
+/* .countdown_cursive {
     font-size: 3rem;
     color: #4a80948e;
     position: absolute;
     font-weight: lighter;
-    /* margin-top: -50px; */
+
     text-align: center;
     z-index: 10;
     transform: translate(31%, 660%);
+} */
+
+.countdown_thankyou {
+    position: absolute;
+    font-size: 3rem;
+    transform: translate(10%, 10%);
+    color: #4a80948e;
 }
 
 .countdown_description {
@@ -462,10 +577,7 @@ body {
 }
 
 .countdown_title {
-    font-size: 3rem;
-    align-self: center;
-    position: relative;
-    z-index: 10;
+    width: 90%;
     margin-bottom: 10%;
     margin-top: 10%;
 }
@@ -478,6 +590,14 @@ body {
 .bottom {
   position: absolute;
   bottom: 0;
+}
+
+/******* PHOTO OF MIMI ******/
+.mimi_photo {
+    width: 160%;
+    object-fit: cover;
+    transform:translate(-20%, 0%);
+
 }
 
   /********* MOBILE VIEW **********/
