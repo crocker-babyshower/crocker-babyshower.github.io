@@ -60,6 +60,10 @@ body {
     overflow: hidden;
 }
 
+.home a {
+    color: rgba(0, 0, 0);
+}
+
 .home_bear_img {
     width: 103%;
     position: absolute;
@@ -217,6 +221,40 @@ body {
     height: 100%;
     object-fit: contain; /* Ensures the image covers the container */
   }
+
+/******* DETAILS ******/
+.details {
+    width: 100%;
+    min-height: 100vh; 
+    text-align: center;
+    overflow-x: hidden;
+    /* background-color: #d3c7b99c; */
+}
+
+.details_title {
+    margin-top: 10%;
+    font-size: 2.5rem;
+}
+
+.details_title .lavishly {
+    font-size: 3rem;
+    transform: translate(12%, -54%);
+    color: #4a80948e;
+}
+
+.directions_img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain; 
+    display: block; /* Ensures no extra space around the image */
+    height: auto; /* Maintain aspect ratio */
+    margin: 5%;
+}
+
+.details_info {
+    display: inline-block;
+    margin: -5% 10% 5% 10%;
+}
 
 /******* BOY ******/
 .boy {
