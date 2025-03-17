@@ -243,12 +243,12 @@ body {
 }
 
 .directions_img {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     object-fit: contain; 
     display: block; /* Ensures no extra space around the image */
     height: auto; /* Maintain aspect ratio */
-    margin: 5%;
+    /* margin: 5%; */
 }
 
 .details_info {
