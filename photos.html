@@ -72,23 +72,35 @@
               
                     // Loop through each file and add it to the gallery
                     data.files.forEach(file => {
-                      if (file.mimeType.startsWith('image/')) {
-                        const thumbnailUrl = `https://drive.google.com/thumbnail?id=${file.id}`;
-                        const fullImageUrl = `https://drive.google.com/file/d/${file.id}/preview`; 
-      
-                        allFullImageUrls.push(fullImageUrl); // Save URL to list
-
-                        // Create a thumbnail element
-                        const img = document.createElement('img');
-                        img.src = thumbnailUrl;
-                        img.alt = file.name;
-                        //img.dataset.fullImage = fullImageUrl; 
-                        img.dataset.index = allFullImageUrls.length - 1; // Set index
-                        img.addEventListener('click', showImageInModal); // Add click event
-              
-                        gallery.appendChild(img);
-                      }
-                    });
+                        if (file.mimeType.startsWith('image/')) {
+                          const thumbnailUrl = `https://drive.google.com/thumbnail?id=${file.id}`;
+                          const fullImageUrl = `https://drive.google.com/file/d/${file.id}/preview`; 
+                      
+                          allFullImageUrls.push(fullImageUrl);
+                      
+                          const img = document.createElement('img');
+                          img.src = thumbnailUrl;
+                          img.alt = file.name;
+                          img.dataset.index = allFullImageUrls.length - 1;
+                          img.addEventListener('click', showImageInModal);
+                      
+                          gallery.appendChild(img);
+                        } else if (file.mimeType.startsWith('video/')) {
+                          const thumbnailUrl = `https://drive.google.com/thumbnail?id=${file.id}`; // Still works for video
+                          const fullVideoUrl = `https://drive.google.com/file/d/${file.id}/preview`; 
+                      
+                          allFullImageUrls.push(fullVideoUrl);
+                      
+                          const videoThumb = document.createElement('img');
+                          videoThumb.src = thumbnailUrl;
+                          videoThumb.alt = file.name;
+                          videoThumb.dataset.index = allFullImageUrls.length - 1;
+                          videoThumb.classList.add('video-thumbnail'); // Optional: for styling videos differently
+                          videoThumb.addEventListener('click', showImageInModal);
+                      
+                          gallery.appendChild(videoThumb);
+                        }
+                      });
               
                     // Get the next page token
                     pageToken = data.nextPageToken;
