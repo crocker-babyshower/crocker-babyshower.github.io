@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Crocker Baby Shower</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lavishly+Yours&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Quicksand&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="favicon.png" type="image/png">
+
+           <!-- Open Graph Meta Tags -->
+           <meta property="og:title" content="Photos Album" />
+           <meta property="og:description" content="See our photos from the baby shower" />
+           <meta property="og:image" content="https://crocker-babyshower.github.io/photos_page.png" />
+           <meta property="og:url" content="https://crocker-babyshower.github.io/" />
+           <meta property="og:type" content="website" />
+    </head>
+    <body>
+        <h1 class="playfair_caps photos_title">Photos</h1>
+        <div class="playfair_caps text-center my-4">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSesn1lUp0Zpnw__7dMn4GaUhqtlZuFPiMptcJD5LEv39fdxag/viewform?usp=dialog" target="_blank" class="btn btn-dark">
+            Upload Your Photos
+          </a>
+        </div>
+        <div class="photo_section">
+            <div class="container">
+              <div class="gallery" id="gallery"></div>
+            </div>
+          </div>
+
+          <!-- <div id="modal" class="modal">
+            <iframe 
+             id="modal-img"
+              src="" 
+              width="640"
+               height="480" 
+               allow="autoplay">
+            </iframe>
+          </div> -->
+
+          <div id="modal" class="modal">
+            <div class="modal_header">
+              <button id="prev-btn" class="modal-nav">&larr;</button>
+              <button id="next-btn" class="modal-nav">&rarr;</button>
+            </div>
+            <iframe id="modal-img" src="" allow="autoplay"></iframe>
+          </div>
+          
+      
+            <!-- FOR GALLERY -->
+            <script>
+                const folderId = '1ZLicCF42Gp6ZjbyT_UeF8KcGpuUQZ-mL'; // Replace with your Google Drive folder ID
+                const apiKey = 'AIzaSyBQ2KmJybXvu7Rdr225r1n__5ifO49VCQk'; // Replace with your Google API key
+                let allFullImageUrls = []; // Stores all full image URLs
+                let currentImageIndex = 0;
+                
+                async function fetchAllImages() {
+                  const gallery = document.getElementById('gallery');
+                  let pageToken = null; // Used for pagination
+              
+                  do {
+                    // Build the API URL
+                    const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=nextPageToken,files(id,name,mimeType)&pageToken=${pageToken || ''}`;
+                    const response = await fetch(url);
+                    const data = await response.json();
+              
+                    // Loop through each file and add it to the gallery
+                    data.files.forEach(file => {
+                      if (file.mimeType.startsWith('image/')) {
+                        const thumbnailUrl = `https://drive.google.com/thumbnail?id=${file.id}`;
+                        const fullImageUrl = `https://drive.google.com/file/d/${file.id}/preview`; 
+      
+                        allFullImageUrls.push(fullImageUrl); // Save URL to list
+
+                        // Create a thumbnail element
+                        const img = document.createElement('img');
+                        img.src = thumbnailUrl;
+                        img.alt = file.name;
+                        //img.dataset.fullImage = fullImageUrl; 
+                        img.dataset.index = allFullImageUrls.length - 1; // Set index
+                        img.addEventListener('click', showImageInModal); // Add click event
+              
+                        gallery.appendChild(img);
+                      }
+                    });
+              
+                    // Get the next page token
+                    pageToken = data.nextPageToken;
+                  } while (pageToken); // Continue fetching while there's a next page
+              
+                  // Update the counter after all images are added
+                  updateImageCounter();
+                }
+              
+                // Function to update the image counter
+                function updateImageCounter() {
+                  const counterDiv = document.querySelector('.counter');
+                  const imageCount = document.querySelectorAll('#gallery img').length; // Count images in the gallery div
+                  counterDiv.textContent = `Total Images: ${imageCount}`;
+                }
+              
+                // Function to show the clicked image in the modal
+                function showImageInModal(event) {
+                    currentImageIndex = parseInt(event.target.dataset.index);
+                    const modal = document.getElementById('modal');
+                    const modalImg = document.getElementById('modal-img');
+                  
+                    updateModalImage(); // Uses currentImageIndex to set src
+                    modal.style.display = 'flex';
+                  }
+
+                function updateModalImage() {
+                    const modalImg = document.getElementById('modal-img');
+                    modalImg.src = allFullImageUrls[currentImageIndex];
+                  }
+              
+                // Close modal on click
+                document.getElementById('modal').addEventListener('click', () => {
+                  document.getElementById('modal').style.display = 'none';
+                });
+              
+                // Fetch all images on page load
+                fetchAllImages();
+
+                // Button handlers
+                document.getElementById('next-btn').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (currentImageIndex < allFullImageUrls.length - 1) {
+                      currentImageIndex++;
+                      updateModalImage();
+                    }
+                  });
+                  
+                  document.getElementById('prev-btn').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (currentImageIndex > 0) {
+                      currentImageIndex--;
+                      updateModalImage();
+                    }
+                  });
+
+                  document.getElementById('modal').addEventListener('click', (e) => {
+                    if (e.target.id === 'modal') {
+                      document.getElementById('modal').style.display = 'none';
+                    }
+                  });
+              </script>
+    </body>
+</html>
