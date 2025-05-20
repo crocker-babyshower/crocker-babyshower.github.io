@@ -18,19 +18,14 @@
            <meta property="og:title" content="Photos Album" />
            <meta property="og:description" content="See our photos from the baby shower" />
            <meta property="og:image" content="https://crocker-babyshower.github.io/photos_page.png" />
-           <meta property="og:url" content="https://crocker-babyshower.github.io/photos" />
+           <meta property="og:url" content="https://crocker-babyshower.github.io/videos" />
            <meta property="og:type" content="website" />
     </head>
     <body>
-        <h1 class="playfair_caps photos_title">Photos</h1>
+        <h1 class="playfair_caps photos_title">Videos</h1>
         <div class="playfair_caps text-center my-4">
-          <a href="https://crocker-babyshower.github.io/videos" class="btn btn-dark">
-            Videos
-          </a>
-        </div>
-        <div class="playfair_caps text-center my-4">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSesn1lUp0Zpnw__7dMn4GaUhqtlZuFPiMptcJD5LEv39fdxag/viewform?usp=dialog" target="_blank" class="btn btn-dark">
-            Upload Your Photos
+          <a href="https://crocker-babyshower.github.io/photos" class="btn btn-dark">
+            Back to photos
           </a>
         </div>
         <div class="photo_section">
@@ -78,7 +73,7 @@
               
                     // Loop through each file and add it to the gallery
                     data.files.forEach(file => {
-                      if (file.mimeType.startsWith('image/')) {
+                      if (file.mimeType.startsWith('video/')) {
                         const thumbnailUrl = `https://drive.google.com/thumbnail?id=${file.id}`;
                         const fullImageUrl = `https://drive.google.com/file/d/${file.id}/preview`; 
       
